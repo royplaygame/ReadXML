@@ -2,13 +2,23 @@ package com.tsinghuait.xml;
 
 import java.util.List;
 
+import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
-
+/**
+ * XML 读取方式：
+ * 1. dom
+ * 2. dom4j
+ * 3. jdom
+ * 4. sax
+ * @author ssr
+ *
+ */
 public class ReadXML {
 
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		String path = ReadXML.class.getClassLoader().getResource("book.xml").getPath();
 		System.out.println(path);
@@ -45,8 +55,9 @@ public class ReadXML {
 			System.out.println("结点的名字："+e.getName()+" 节点的值："+e.getTextTrim());
 			System.out.println("结点的属性个数："+e.attributeCount());
 			System.out.println("节点所有属性值：---------------------------");
-			for(Object el: e.attributes()){
-				System.out.println(el.toString());
+			List<Attribute> attrs=e.attributes();
+			for(Attribute el: attrs){
+				System.out.println(el.getName()+"===="+el.getText());
 			}
 			System.out.println(e.getNodeTypeName());
 		}

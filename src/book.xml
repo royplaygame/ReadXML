@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bookstore>
+<bookstore address="beijing" category="wenxue" type="xiaoshuo">
 	<book category="COOKING">
 		<title lang="en">Everyday Italian</title>
 		<author>Giada De Laurentiis</author>
