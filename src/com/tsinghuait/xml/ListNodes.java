@@ -64,7 +64,7 @@ public class ListNodes {
 		System.out.println("\n---------------------------------------------------------------");
 	}
 
-	public static void writeDocumentToFile(Document doc, String fileName)throws Exception {
+	public static void writeDocumentToFile(Document doc, String fileName) throws Exception {
 		// 输出格式
 		OutputFormat format = OutputFormat.createPrettyPrint();
 		// 设置编码
@@ -77,7 +77,9 @@ public class ListNodes {
 		// 写入文件
 		writer.write(doc);
 		writer.flush();
+		// 释放资源
 		writer.close();
-
+		os.close();
+		out.close();
 	}
 }
